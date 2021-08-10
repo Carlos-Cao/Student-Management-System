@@ -34,12 +34,17 @@ class Student{
     }
 
     public String toString(){
-        return this.id + " " + this.firstName + " "  + this.lastName;
+        return getId() + " " + getFirstName() + " " + getLastName();
     }
 
     public static void main(String args[]){
         Student s1 = new Student(1, "Carlos", "Cao" );
         System.out.println(s1);
+
+        FullTime s2 = new FullTime(2, "James", "Bond", "Hotel", 007);
+        System.out.println(s2);
+
+
 
     }
 }
