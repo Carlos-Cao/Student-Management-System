@@ -44,7 +44,7 @@ class Student{
         FullTime s2 = new FullTime(2, "James", "Bond", "Hotel", 007);
         System.out.println(s2);
 
-
-
+        PartTime s3 = new PartTime(3, "Part", "Timer", 3, "IW");
+        System.out.println(s3);
     }
 }
