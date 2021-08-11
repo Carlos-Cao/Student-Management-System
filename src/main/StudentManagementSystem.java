@@ -55,7 +55,7 @@ public class StudentManagementSystem {
                                 System.out.println("Enter full time student year:");
                                 int year = scan.nextInt();
                                 scan.nextLine();
-                                FullTime full = new FullTime(id, fName, lName, course, hostel, year);
+                                FullTimeStudent full = new FullTimeStudent(id, fName, lName, course, hostel, year);
                                 students.put(id, " First Name: " + fName + ", Last Name: " + lName + ", Courses: " + Arrays.toString(course) + ", Hostel Name: " + hostel + ", Year: " + year + "\n");
                                 System.out.println(full + " added!");
                             } else if (type == 2) {
@@ -75,7 +75,7 @@ public class StudentManagementSystem {
                                 scan.nextLine();
                                 System.out.println("Enter part time student Employer:");
                                 String employer = scan.nextLine();
-                                PartTime part = new PartTime(id, fName, lName, course, level, employer);
+                                PartTimeStudent part = new PartTimeStudent(id, fName, lName, course, level, employer);
                                 students.put(id, " First Name: " + fName + ", Last Name: " + lName + ", Courses: " + Arrays.toString(course) + ", Level: " + level + ", Employer: " + employer + "\n");
                                 System.out.println(part + " record has been added!");
                             }
