@@ -1,50 +1,14 @@
+package main;
+
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-class Student {
-    private int id;
-    private String firstName;
-    private String lastName;
-
-    public Student(int id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String toString() {
-        return getId() + " " + getFirstName() + " " + getLastName();
-    }
-
+public class StudentManagementSystem {
+    private static final HashMap<Integer, String> students = new HashMap<Integer, String>();
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         boolean exit = false;
-        HashMap<Integer, String> students = new HashMap<Integer, String>();
         do {
             System.out.println("");
             System.out.println("Student Management System");
@@ -108,12 +72,10 @@ class Student {
                             System.out.println("Wrong input detected, please try again.");
                         }
                         break;
-
                     case 2:
                         System.out.println("List of Students");
                         System.out.println(students);
                         break;
-
                     case 3:
                         System.out.println("Enter Student ID to View Students Details");
                         try {
@@ -125,7 +87,6 @@ class Student {
                             System.out.println("Wrong input detected, please try ID again.");
                         }
                         break;
-
                     case 4:
                         System.out.println("Enter Student ID to Delete Student record");
                         try {
@@ -143,8 +104,6 @@ class Student {
                 scan.nextLine();
                 System.out.println("Wrong input detected, please select an option from the following.");
             }
-
         } while (!exit);
     }
-
 }

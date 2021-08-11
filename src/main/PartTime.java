@@ -1,6 +1,8 @@
+package main;
+
 class PartTime extends Student {
-    int level;
-    String employer;
+    private int level;
+    private String employer;
 
     public PartTime(int id, String firstName, String lastName, int level, String employer) {
         super(id, firstName, lastName);
