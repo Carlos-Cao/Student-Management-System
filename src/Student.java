@@ -58,15 +58,43 @@ class Student{
                     break;
                 case 1:
                     System.out.println("Add New Student");
-                    System.out.println("Set ID:");
-                    int id = scan.nextInt();
-                    System.out.println("Set First Name:");
-                    String fName = scan.nextLine();
-                    System.out.println("Set Last Name:");
-                    String lName = scan.nextLine();
-                    Student newStudent = new Student(id, fName, lName);
-                    students.put(id, lName);
-                    System.out.println(newStudent);
+                    System.out.println("1. Full Time");
+                    System.out.println("2. Part Time");
+                    int type = scan.nextInt();
+                    if (type == 1){
+                        System.out.println("Set ID:");
+                        int id = scan.nextInt();
+                        scan.nextLine();
+                        System.out.println("Set First Name:");
+                        String fName = scan.nextLine();
+                        System.out.println("Set Last Name:");
+                        String lName = scan.nextLine();
+                        System.out.println("Set Hostel:");
+                        String hostel = scan.nextLine();
+                        System.out.println("Set year:");
+                        int year = scan.nextInt();
+                        scan.nextLine();
+                        FullTime full = new FullTime(id, fName, lName, hostel, year);
+                        students.put(id, " First Name: " + fName + ", Last Name: " + lName + ", Hostel Name: " + hostel + ", Year: " + year);
+                        System.out.println(full + " added!");
+                    }
+                    else if (type == 2){
+                        System.out.println("Set ID:");
+                        int id = scan.nextInt();
+                        scan.nextLine();
+                        System.out.println("Set First Name:");
+                        String fName = scan.nextLine();
+                        System.out.println("Set Last Name:");
+                        String lName = scan.nextLine();
+                        System.out.println("Set Level:");
+                        int level = scan.nextInt();
+                        scan.nextLine();
+                        System.out.println("Set Employer:");
+                        String employer = scan.nextLine();
+                        PartTime part = new PartTime(id, fName, lName, level, employer);
+                        students.put(id, " First Name: " + fName + ", Last Name: " + lName + ", Level: " + level + ", Employer: " + employer);
+                        System.out.println(part + " added!");
+                    }
                     break;
 
                 case 2:
@@ -76,10 +104,17 @@ class Student{
 
                 case 3:
                     System.out.println("Enter ID to View Students Details");
+                    int viewId = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println(students.get(viewId));
                     break;
 
                 case 4:
                     System.out.println("Enter ID to Delete Student");
+                    int removeId = scan.nextInt();
+                    scan.nextLine();
+                    students.remove(removeId);
+                    System.out.println(removeId + " removed.");
                     break;
             }
 
