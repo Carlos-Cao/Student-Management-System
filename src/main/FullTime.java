@@ -4,8 +4,8 @@ class FullTime extends Student {
     private String hostelName;
     private int year;
 
-    public FullTime(int id, String firstName, String lastName, String hostelName, int year) {
-        super(id, firstName, lastName);
+    public FullTime(int id, String firstName, String lastName, String[] courses, String hostelName, int year) {
+        super(id, firstName, lastName, courses);
         this.hostelName = hostelName;
         this.year = year;
     }

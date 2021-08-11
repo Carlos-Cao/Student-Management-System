@@ -4,11 +4,13 @@ class Student {
     private int id;
     private String firstName;
     private String lastName;
+    private String[] courses;
 
-    public Student(int id, String firstName, String lastName) {
+    public Student(int id, String firstName, String lastName, String[] courses) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.courses = courses;
 
     }
 
@@ -36,8 +38,16 @@ class Student {
         this.lastName = lastName;
     }
 
+    public String[] getCourses() {
+        return courses;
+    }
+
+    public void setCourses(String[] courses) {
+        this.courses = courses;
+    }
+
     public String toString() {
-        return getId() + " " + getFirstName() + " " + getLastName();
+        return getId() + " " + getFirstName() + " " + getLastName() + " " + getCourses();
     }
 
 }
