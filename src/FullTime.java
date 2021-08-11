@@ -1,4 +1,4 @@
-class FullTime extends Student{
+class FullTime extends Student {
     String hostelName;
     int year;
 

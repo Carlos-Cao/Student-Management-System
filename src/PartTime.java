@@ -1,4 +1,4 @@
-class PartTime extends Student{
+class PartTime extends Student {
     int level;
     String employer;
 

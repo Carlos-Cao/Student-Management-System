@@ -1,12 +1,13 @@
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-class Student{
+class Student {
     private int id;
     private String firstName;
     private String lastName;
 
-    public Student(int id, String firstName, String lastName){
+    public Student(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,7 +37,7 @@ class Student{
         this.lastName = lastName;
     }
 
-    public String toString(){
+    public String toString() {
         return getId() + " " + getFirstName() + " " + getLastName();
     }
 
@@ -44,7 +45,7 @@ class Student{
         Scanner scan = new Scanner(System.in);
         boolean exit = false;
         HashMap<Integer, String> students = new HashMap<Integer, String>();
-        do{
+        do {
             System.out.println("");
             System.out.println("Student Management System");
             System.out.println("**************************");
@@ -102,7 +103,7 @@ class Student{
                                 students.put(id, " First Name: " + fName + ", Last Name: " + lName + ", Level: " + level + ", Employer: " + employer);
                                 System.out.println(part + " record has been added!");
                             }
-                        } catch (java.util.InputMismatchException e) {
+                        } catch (InputMismatchException e) {
                             scan.nextLine();
                             System.out.println("Wrong input detected, please try again.");
                         }
@@ -119,11 +120,10 @@ class Student{
                             int viewId = scan.nextInt();
                             scan.nextLine();
                             System.out.println(students.get(viewId));
+                        } catch (InputMismatchException e) {
+                            scan.nextLine();
+                            System.out.println("Wrong input detected, please try ID again.");
                         }
-                        catch (java.util.InputMismatchException e) {
-                        scan.nextLine();
-                        System.out.println("Wrong input detected, please try ID again.");
-                    }
                         break;
 
                     case 4:
@@ -133,14 +133,13 @@ class Student{
                             scan.nextLine();
                             students.remove(removeId);
                             System.out.println(removeId + " record has been removed.");
-                        }
-                        catch (java.util.InputMismatchException e) {
+                        } catch (InputMismatchException e) {
                             scan.nextLine();
                             System.out.println("Wrong input detected, please try ID again.");
                         }
                         break;
                 }
-            } catch (java.util.InputMismatchException e) {
+            } catch (InputMismatchException e) {
                 scan.nextLine();
                 System.out.println("Wrong input detected, please select an option from the following.");
             }
