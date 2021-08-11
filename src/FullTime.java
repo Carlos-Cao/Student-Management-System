@@ -26,6 +26,6 @@ class FullTime extends Student{
 
     @Override
     public String toString() {
-        return getId() + " " + getFirstName() + " " + getLastName() + " " + getHostelName() + " " + getYear();
+        return "ID: " + getId() + ", First Name: " + getFirstName() + ", Last Name: " + getLastName() + ", Hostel Name: " + getHostelName() + ", Year: " + getYear();
     }
 }
