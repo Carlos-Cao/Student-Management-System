@@ -1,6 +1,7 @@
 package main;
 
 class PartTimeStudent extends Student {
+
     private int level;
     private String employer;
 
