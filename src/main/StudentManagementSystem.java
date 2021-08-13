@@ -7,6 +7,39 @@ import java.util.Scanner;
 
 public class StudentManagementSystem {
 
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        boolean exit = false;
+        do {
+            printMenu();
+            try {
+                int option = scan.nextInt();
+                switch (option) {
+                    case 0:
+                        exit = true;
+                        break;
+                    case 1:
+                        addStudent(scan);
+                        break;
+                    case 2:
+                        listStudents();
+                        break;
+                    case 3:
+                        viewStudent(scan);
+                        break;
+                    case 4:
+                        deleteStudent(scan);
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                scan.nextLine();
+                System.out.println("Wrong input detected, please select an option from the following.");
+            }
+        } while (!exit);
+    }
+
     private static final HashMap<Integer, String> students = new HashMap<Integer, String>();
 
     public static void printMenu() {
@@ -115,38 +148,5 @@ public class StudentManagementSystem {
         PartTimeStudent part = new PartTimeStudent(id, fName, lName, course, level, employer);
         students.put(id, " First Name: " + fName + ", Last Name: " + lName + ", Courses: " + Arrays.toString(course) + ", Level: " + level + ", Employer: " + employer + "\n");
         System.out.println(part + " record has been added!");
-    }
-
-    public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
-
-        boolean exit = false;
-        do {
-            printMenu();
-            try {
-                int option = scan.nextInt();
-                switch (option) {
-                    case 0:
-                        exit = true;
-                        break;
-                    case 1:
-                        addStudent(scan);
-                        break;
-                    case 2:
-                        listStudents();
-                        break;
-                    case 3:
-                        viewStudent(scan);
-                        break;
-                    case 4:
-                        deleteStudent(scan);
-                        break;
-                }
-            } catch (InputMismatchException e) {
-                scan.nextLine();
-                System.out.println("Wrong input detected, please select an option from the following.");
-            }
-        } while (!exit);
     }
 }
