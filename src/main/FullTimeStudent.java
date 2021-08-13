@@ -1,6 +1,6 @@
 package main;
 
-class FullTimeStudent extends Student {
+public class FullTimeStudent extends Student {
 
     private String hostelName;
     private int year;
