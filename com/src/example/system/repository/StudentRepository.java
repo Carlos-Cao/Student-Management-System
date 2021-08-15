@@ -1,4 +1,4 @@
-package repository;
+package src.example.system.repository;
 
 import java.util.Scanner;
 
