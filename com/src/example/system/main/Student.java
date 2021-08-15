@@ -1,6 +1,6 @@
-package main;
+package src.example.system.main;
 
-class Student {
+public class Student {
 
     private int id;
     private String firstName;

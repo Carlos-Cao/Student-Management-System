@@ -1,6 +1,6 @@
-package main;
+package src.example.system.main;
 
-class PartTimeStudent extends Student {
+public class PartTimeStudent extends Student {
 
     private int level;
     private String employer;
