@@ -1,7 +1,7 @@
-package src.example.system.main;
+package com.example.student.managment.system.main;
 
-import src.example.system.repository.StudentRepository;
-import src.example.system.repository.StudentRepositoryFactory;
+import com.example.student.managment.system.repository.StudentRepository;
+import com.example.student.managment.system.repository.StudentRepositoryFactory;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
