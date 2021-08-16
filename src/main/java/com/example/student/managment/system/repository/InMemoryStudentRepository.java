@@ -1,8 +1,8 @@
-package src.example.system.repository;
+package com.example.student.managment.system.repository;
 
-import src.example.system.main.FullTimeStudent;
-import src.example.system.main.PartTimeStudent;
-import src.example.system.main.Student;
+import com.example.student.managment.system.main.FullTimeStudent;
+import com.example.student.managment.system.main.PartTimeStudent;
+import com.example.student.managment.system.main.Student;
 
 import java.util.HashMap;
 import java.util.InputMismatchException;

@@ -1,4 +1,4 @@
-package src.example.system.main;
+package com.example.student.managment.system.main;
 
 public class Student {
 
