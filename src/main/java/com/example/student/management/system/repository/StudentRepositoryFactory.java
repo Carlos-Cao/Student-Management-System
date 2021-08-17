@@ -1,4 +1,4 @@
-package com.example.student.managment.system.repository;
+package com.example.student.management.system.repository;
 
 public class StudentRepositoryFactory {
     public static StudentRepository getStudentRepository() {

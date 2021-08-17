@@ -1,4 +1,4 @@
-package com.example.student.managment.system.repository;
+package com.example.student.management.system.repository;
 
 import java.util.Scanner;
 
