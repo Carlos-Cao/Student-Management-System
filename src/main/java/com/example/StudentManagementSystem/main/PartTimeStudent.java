@@ -1,4 +1,4 @@
-package com.example.student.managment.system.main;
+package com.example.StudentManagementSystem.main;
 
 public class PartTimeStudent extends Student {
 

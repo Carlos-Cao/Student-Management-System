@@ -1,4 +1,4 @@
-package com.example.student.managment.system.main;
+package com.example.StudentManagementSystem.main;
 
 public class FullTimeStudent extends Student {
 
@@ -32,3 +32,4 @@ public class FullTimeStudent extends Student {
         return "ID: " + getId() + ", First Name: " + getFirstName() + ", Last Name: " + getLastName() + ", Hostel Name: " + getHostelName() + ", Year: " + getYear();
     }
 }
+

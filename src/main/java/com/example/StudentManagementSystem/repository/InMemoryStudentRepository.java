@@ -1,14 +1,17 @@
-package com.example.student.managment.system.repository;
+package com.example.StudentManagementSystem.repository;
 
-import com.example.student.managment.system.main.FullTimeStudent;
-import com.example.student.managment.system.main.PartTimeStudent;
-import com.example.student.managment.system.main.Student;
+import com.example.StudentManagementSystem.main.FullTimeStudent;
+import com.example.StudentManagementSystem.main.PartTimeStudent;
+import com.example.StudentManagementSystem.main.Student;
+import org.springframework.stereotype.Component;
+
 
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class InMemoryStudentRepository implements StudentRepository{
+@Component
+public class InMemoryStudentRepository implements StudentRepository {
 
     private final HashMap<Integer, Student> students = new HashMap<Integer, Student>();
 
