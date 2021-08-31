@@ -1,12 +1,14 @@
-package com.example.StudentManagementSystem.main;
+package main;
 
-import com.example.StudentManagementSystem.main.repository.StudentRepository;
+import main.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class StudentManagementSystemApplication implements RunInterface{
+@Service
+public class StudentManagementSystemService {
 
     @Autowired
     private StudentRepository studentRepo;
@@ -14,7 +16,6 @@ public class StudentManagementSystemApplication implements RunInterface{
     @Autowired
     private CLI cli;
 
-    @Override
     public void run() {
 
         //StudentRepository studentRepo = StudentRepositoryFactory.getStudentRepository();
@@ -53,6 +54,11 @@ public class StudentManagementSystemApplication implements RunInterface{
     public static Scanner getScanner() {
         Scanner scan = new Scanner(System.in);
         return scan;
+    }
+
+    public void addNewStudent(Student newStudent) {
+        newStudent = cli.addStudent(getScanner());
+        studentRepo.addStudent(newStudent);
     }
 
     public void listStudents() {

@@ -1,8 +1,11 @@
-package com.example.StudentManagementSystem.main;
+package main;
+
+import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+@Component
 public class CLI {
 
     public void printMenu() {
