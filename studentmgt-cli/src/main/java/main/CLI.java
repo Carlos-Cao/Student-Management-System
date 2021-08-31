@@ -1,69 +1,14 @@
-package com.example.StudentManagementSystem.main;
+package main;
 
-import com.example.StudentManagementSystem.main.repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-@SpringBootApplication
-public class StudentManagementSystemApplication implements CommandLineRunner {
+@Component
+public class CLI {
 
-    @Autowired
-    private StudentRepository studentRepo;
-
-
-    public static void main(String[] args) {
-
-        SpringApplication.run(StudentManagementSystemApplication.class, args);
-
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-
-        //StudentRepository studentRepo = StudentRepositoryFactory.getStudentRepository();
-
-        Scanner scan = getScanner();
-
-        boolean exit = false;
-        do {
-            printMenu();
-            try {
-                int option = scan.nextInt();
-                switch (option) {
-                    case 0:
-                        exit = true;
-                        break;
-                    case 1:
-                        addStudent(scan);
-                        break;
-                    case 2:
-                        listStudents();
-                        break;
-                    case 3:
-                        viewStudent(scan);
-                        break;
-                    case 4:
-                        deleteStudent(scan);
-                        break;
-                }
-            } catch (InputMismatchException e) {
-                scan.nextLine();
-                System.out.println("Wrong input detected, please select an option from the following.");
-            }
-        } while (!exit);
-    }
-
-    public static Scanner getScanner() {
-        Scanner scan = new Scanner(System.in);
-        return scan;
-    }
-
-    public static void printMenu() {
+    public void printMenu() {
         System.out.println("");
         System.out.println("Student Management System");
         System.out.println("**************************");
@@ -77,7 +22,7 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
         System.out.println("Enter your option...");
     }
 
-    public void addStudent(Scanner scan) {
+    public Student addStudent(Scanner scan) {
         try {
             System.out.println("Adding a New Student");
             System.out.println("Press a number to select type of student");
@@ -85,17 +30,18 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
             System.out.println("2 - Part Time");
             int type = scan.nextInt();
             if (type == 1) {
-                addFullTimeStudent(scan);
+                return addFullTimeStudent(scan);
             } else if (type == 2) {
-                addPartTimeStudent(scan);
+                return addPartTimeStudent(scan);
             }
         } catch (InputMismatchException e) {
             scan.nextLine();
             System.out.println("Wrong input detected, please try again.");
         }
+        return null;
     }
 
-    public void addFullTimeStudent(Scanner scan) {
+    public Student addFullTimeStudent(Scanner scan) {
         System.out.println("Enter student ID:");
         int id = scan.nextInt();
         scan.nextLine();
@@ -115,11 +61,11 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
         int year = scan.nextInt();
         scan.nextLine();
         FullTimeStudent full = new FullTimeStudent(id, fName, lName, course, hostel, year);
-        studentRepo.addStudent(full);
         System.out.println(full + " added!");
+        return full;
     }
 
-    public void addPartTimeStudent(Scanner scan) {
+    public Student addPartTimeStudent(Scanner scan) {
         System.out.println("Enter student ID:");
         int id = scan.nextInt();
         scan.nextLine();
@@ -137,37 +83,20 @@ public class StudentManagementSystemApplication implements CommandLineRunner {
         System.out.println("Enter part time student Employer:");
         String employer = scan.nextLine();
         PartTimeStudent part = new PartTimeStudent(id, fName, lName, course, level, employer);
-        studentRepo.addStudent(part);
         System.out.println(part + " record has been added!");
+        return part;
     }
 
     public void listStudents() {
         System.out.println("List of Students");
-        studentRepo.listStudents();
     }
 
     public void viewStudent(Scanner scan) {
         System.out.println("Enter Student ID to View Students Details");
-        try {
-            int viewId = scan.nextInt();
-            scan.nextLine();
-            studentRepo.viewStudent(viewId);
-        } catch (InputMismatchException e) {
-            scan.nextLine();
-            System.out.println("Wrong input detected, please try ID again.");
-        }
+
     }
 
     public void deleteStudent(Scanner scan) {
         System.out.println("Enter Student ID to Delete Student record");
-        try {
-            int removeId = scan.nextInt();
-            scan.nextLine();
-            studentRepo.deleteStudent(removeId);
-        } catch (InputMismatchException e) {
-            scan.nextLine();
-            System.out.println("Wrong input detected, please try ID again.");
-        }
     }
-
 }

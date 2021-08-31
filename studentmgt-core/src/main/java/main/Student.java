@@ -1,4 +1,4 @@
-package com.example.StudentManagementSystem.main;
+package main;
 
 public class Student {
 

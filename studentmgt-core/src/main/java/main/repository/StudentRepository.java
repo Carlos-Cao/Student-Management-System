@@ -1,6 +1,6 @@
-package com.example.StudentManagementSystem.main.repository;
+package main.repository;
 
-import com.example.StudentManagementSystem.main.Student;
+import main.Student;
 
 public interface StudentRepository {
     public void addStudent(Student newStudent);

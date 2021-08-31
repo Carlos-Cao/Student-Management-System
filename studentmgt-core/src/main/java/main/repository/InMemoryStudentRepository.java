@@ -1,6 +1,6 @@
-package com.example.StudentManagementSystem.main.repository;
+package main.repository;
 
-import com.example.StudentManagementSystem.main.Student;
+import main.Student;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
