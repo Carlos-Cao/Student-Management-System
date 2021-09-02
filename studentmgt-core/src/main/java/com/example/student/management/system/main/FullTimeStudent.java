@@ -1,4 +1,4 @@
-package main;
+package com.example.student.management.system.main;
 
 public class FullTimeStudent extends Student {
 

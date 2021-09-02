@@ -1,5 +1,10 @@
-package main;
+package com.example.student.management.system.main.cli;
 
+import com.example.student.management.system.main.Student;
+import com.example.student.management.system.main.StudentManagementSystemService;
+import com.example.student.management.system.main.FullTimeStudent;
+import com.example.student.management.system.main.PartTimeStudent;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.InputMismatchException;
@@ -7,6 +12,9 @@ import java.util.Scanner;
 
 @Component
 public class CLI {
+
+    @Autowired
+    private StudentManagementSystemService studentManagementSystemService;
 
     public void printMenu() {
         System.out.println("");
@@ -61,6 +69,7 @@ public class CLI {
         int year = scan.nextInt();
         scan.nextLine();
         FullTimeStudent full = new FullTimeStudent(id, fName, lName, course, hostel, year);
+        studentManagementSystemService.addFullTimeStudent(full);
         System.out.println(full + " added!");
         return full;
     }
@@ -83,20 +92,24 @@ public class CLI {
         System.out.println("Enter part time student Employer:");
         String employer = scan.nextLine();
         PartTimeStudent part = new PartTimeStudent(id, fName, lName, course, level, employer);
+        studentManagementSystemService.addPartTimeStudent(part);
         System.out.println(part + " record has been added!");
         return part;
     }
 
     public void listStudents() {
         System.out.println("List of Students");
+        studentManagementSystemService.listStudents();
     }
 
     public void viewStudent(Scanner scan) {
         System.out.println("Enter Student ID to View Students Details");
+        studentManagementSystemService.viewStudent(scan);
 
     }
 
     public void deleteStudent(Scanner scan) {
         System.out.println("Enter Student ID to Delete Student record");
+        studentManagementSystemService.deleteStudent(scan);
     }
 }

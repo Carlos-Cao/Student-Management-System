@@ -1,4 +1,4 @@
-package main.repository;
+package com.example.student.management.system.main.repository;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
