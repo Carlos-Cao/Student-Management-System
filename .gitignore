@@ -1,7 +1,7 @@
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
+!**/src/com.example.student.mangement.system.main/**/target/
 !**/src/test/**/target/
 .mvn
 
@@ -27,7 +27,7 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
-!**/src/main/**/build/
+!**/src/com.example.student.mangement.system.main/**/build/
 !**/src/test/**/build/
 
 ### VS Code ###

@@ -1,4 +1,6 @@
-package main;
+package com.example.student.management.system.main;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Student {
 
@@ -23,6 +25,7 @@ public class Student {
         this.id = id;
     }
 
+    @JsonProperty("fName")
     public String getFirstName() {
         return firstName;
     }
@@ -31,6 +34,7 @@ public class Student {
         this.firstName = firstName;
     }
 
+    @JsonProperty("lName")
     public String getLastName() {
         return lastName;
     }

@@ -1,9 +1,11 @@
-package main;
+package com.example.student.management.system.main;
 
-import main.repository.StudentRepository;
+import com.example.student.management.system.main.cli.CLI;
+import com.example.student.management.system.main.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -18,13 +20,10 @@ public class StudentManagementSystemService {
 
     public void run() {
 
-        //StudentRepository studentRepo = StudentRepositoryFactory.getStudentRepository();
-
         Scanner scan = getScanner();
 
         boolean exit = false;
         do {
-            cli.printMenu();
             try {
                 int option = scan.nextInt();
                 switch (option) {
@@ -35,13 +34,13 @@ public class StudentManagementSystemService {
                         cli.addStudent(scan);
                         break;
                     case 2:
-                        cli.listStudents();
+                        listStudents();
                         break;
                     case 3:
-                        cli.viewStudent(scan);
+                        viewStudent(scan);
                         break;
                     case 4:
-                        cli.deleteStudent(scan);
+                        deleteStudent(scan);
                         break;
                 }
             } catch (InputMismatchException e) {
@@ -56,14 +55,16 @@ public class StudentManagementSystemService {
         return scan;
     }
 
-    public void addNewStudent(Student newStudent) {
-        newStudent = cli.addStudent(getScanner());
-        studentRepo.addStudent(newStudent);
+    public Student addFullTimeStudent(Student full) {
+        return studentRepo.addStudent(full);
     }
 
-    public void listStudents() {
-        System.out.println("List of Students");
-        studentRepo.listStudents();
+    public Student addPartTimeStudent(Student part) {
+        return studentRepo.addStudent(part);
+    }
+
+    public HashMap<Integer, Student> listStudents() {
+        return studentRepo.listStudents();
     }
 
     public void viewStudent(Scanner scan) {

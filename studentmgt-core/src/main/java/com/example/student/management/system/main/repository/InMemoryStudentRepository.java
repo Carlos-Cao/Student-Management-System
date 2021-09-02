@@ -1,6 +1,6 @@
-package main.repository;
+package com.example.student.management.system.main.repository;
 
-import main.Student;
+import com.example.student.management.system.main.Student;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -12,28 +12,27 @@ public class InMemoryStudentRepository implements StudentRepository {
 
     private final HashMap<Integer, Student> students = new HashMap<Integer, Student>();
 
-
     @Override
-    public void addStudent(Student newStudent) {
+    public Student addStudent(Student newStudent) {
         students.put(newStudent.getId(), newStudent);
-
+        return newStudent;
     }
 
     @Override
-    public void listStudents() {
+    public HashMap<Integer, Student> listStudents() {
         System.out.println(students);
+        return students;
     }
 
     @Override
-    public void viewStudent(int viewId) {
+    public Student viewStudent(int viewId) {
         System.out.println(students.get(viewId));
-
+        return students.get(viewId);
     }
 
     @Override
     public void deleteStudent(int removeId) {
         students.remove(removeId);
         System.out.println(removeId + " record has been removed.");
-
     }
 }

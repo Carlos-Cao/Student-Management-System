@@ -154,7 +154,7 @@ if exist %WRAPPER_JAR% (
 )
 @REM End of extension
 
-@REM Provide a "standardized" way to retrieve the com.example.StudentManagementSystem.main.cli args that will
+@REM Provide a "standardized" way to retrieve the com.example.StudentManagementSystem.com.example.student.mangement.system.main.cli args that will
 @REM work with both Windows and non-Windows executions.
 set MAVEN_CMD_LINE_ARGS=%*
 

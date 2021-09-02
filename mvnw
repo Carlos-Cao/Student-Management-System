@@ -296,7 +296,7 @@ if $cygwin; then
     MAVEN_PROJECTBASEDIR=`cygpath --path --windows "$MAVEN_PROJECTBASEDIR"`
 fi
 
-# Provide a "standardized" way to retrieve the com.example.StudentManagementSystem.main.CLI args that will
+# Provide a "standardized" way to retrieve the com.example.StudentManagementSystem.com.example.student.mangement.system.main.CLI args that will
 # work with both Windows and non-Windows executions.
 MAVEN_CMD_LINE_ARGS="$MAVEN_CONFIG $@"
 export MAVEN_CMD_LINE_ARGS

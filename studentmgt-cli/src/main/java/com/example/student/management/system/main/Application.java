@@ -1,4 +1,4 @@
-package main;
+package com.example.student.management.system.main;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,7 +10,6 @@ public class Application implements CommandLineRunner {
 
     @Autowired
     private StudentManagementSystemService studentManagementSystemService;
-
 
     public static void main(String[] args) {
 
