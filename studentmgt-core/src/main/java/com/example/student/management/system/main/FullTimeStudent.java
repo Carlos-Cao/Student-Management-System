@@ -5,8 +5,8 @@ public class FullTimeStudent extends Student {
     private String hostelName;
     private int year;
 
-    public FullTimeStudent(int id, String firstName, String lastName, String[] courses, String hostelName, int year) {
-        super(id, firstName, lastName, courses);
+    public FullTimeStudent(int id, String firstName, String lastName, String[] courses, StudentType studentType, String hostelName, int year) {
+        super(id, firstName, lastName, courses, studentType);
         this.hostelName = hostelName;
         this.year = year;
     }
@@ -29,7 +29,13 @@ public class FullTimeStudent extends Student {
 
     @Override
     public String toString() {
-        return "ID: " + getId() + ", First Name: " + getFirstName() + ", Last Name: " + getLastName() + ", Hostel Name: " + getHostelName() + ", Year: " + getYear();
+        return "Id: " + getId() +
+                ", First Name: " + getFirstName() +
+                ", Last Name: " + getLastName() +
+                ", Courses: " + getCourses() +
+                ", Student Type: " + getStudentType() +
+                ", Hostel Name: " + getHostelName() +
+                ", Year: " + getYear();
     }
 }
 

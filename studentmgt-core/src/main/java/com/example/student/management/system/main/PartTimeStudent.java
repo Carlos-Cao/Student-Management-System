@@ -5,8 +5,8 @@ public class PartTimeStudent extends Student {
     private int level;
     private String employer;
 
-    public PartTimeStudent(int id, String firstName, String lastName, String[] courses, int level, String employer) {
-        super(id, firstName, lastName, courses);
+    public PartTimeStudent(int id, String firstName, String lastName, String[] courses, StudentType studentType, int level, String employer) {
+        super(id, firstName, lastName, courses, studentType);
         this.level = level;
         this.employer = employer;
     }
@@ -29,6 +29,12 @@ public class PartTimeStudent extends Student {
 
     @Override
     public String toString() {
-        return getId() + " " + getFirstName() + " " + getLastName() + " " + getLevel() + " " + getEmployer();
+        return "Id: " + getId() +
+                ", First Name: " + getFirstName() +
+                ", Last Name: " + getLastName() +
+                ", Courses: " + getCourses() +
+                ", Student Type: " + getStudentType() +
+                ", Student Level: " + getLevel() +
+                ", Employer: " + getEmployer();
     }
 }

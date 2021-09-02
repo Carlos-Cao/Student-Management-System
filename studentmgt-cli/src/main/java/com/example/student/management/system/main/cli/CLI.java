@@ -49,6 +49,17 @@ public class CLI {
         return null;
     }
 
+    public int addStudentType(Scanner scan) {
+        System.out.println("Enter 1 for FullTime Student or 2 for PartTime student: ");
+        int type = scan.nextInt();
+        if (type == 1) {
+            return 1;
+        } else if (type == 2) {
+            return 2;
+        }
+        return 0;
+    }
+
     public Student addFullTimeStudent(Scanner scan) {
         System.out.println("Enter student ID:");
         int id = scan.nextInt();
@@ -63,12 +74,13 @@ public class CLI {
         String course3 = scan.nextLine();
         String course4 = scan.nextLine();
         String[] course = {course1, course2, course3, course4};
+        Student.StudentType studentType = Student.StudentType.FULLTIME;
         System.out.println("Enter full time student Hostel name:");
         String hostel = scan.nextLine();
         System.out.println("Enter full time student year:");
         int year = scan.nextInt();
         scan.nextLine();
-        FullTimeStudent full = new FullTimeStudent(id, fName, lName, course, hostel, year);
+        FullTimeStudent full = new FullTimeStudent(id, fName, lName, course, studentType, hostel, year);
         studentManagementSystemService.addFullTimeStudent(full);
         System.out.println(full + " added!");
         return full;
@@ -86,12 +98,14 @@ public class CLI {
         String course1 = scan.nextLine();
         String course2 = scan.nextLine();
         String[] course = {course1, course2};
+        System.out.println("Enter 1 for FullTime Student or 2 for PartTime student: ");
+        Student.StudentType studentType = Student.StudentType.PARTTIME;
         System.out.println("Enter part time student Level:");
         int level = scan.nextInt();
         scan.nextLine();
         System.out.println("Enter part time student Employer:");
         String employer = scan.nextLine();
-        PartTimeStudent part = new PartTimeStudent(id, fName, lName, course, level, employer);
+        PartTimeStudent part = new PartTimeStudent(id, fName, lName, course, studentType, level, employer);
         studentManagementSystemService.addPartTimeStudent(part);
         System.out.println(part + " record has been added!");
         return part;
