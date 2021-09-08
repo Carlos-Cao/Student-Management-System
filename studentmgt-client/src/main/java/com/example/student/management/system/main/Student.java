@@ -1,21 +1,21 @@
 package com.example.student.management.system.main;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class Student {
 
     public enum StudentType {
         FULLTIME,
         PARTTIME
-    }
-
-    ;
+    };
 
     private int id;
     private String firstName;
     private String lastName;
     private String[] courses;
     private StudentType studentType;
+
+    public Student() {
+
+    }
 
     public Student(int id, String firstName, String lastName, String[] courses, StudentType studentType) {
         this.id = id;
@@ -67,10 +67,14 @@ public class Student {
     }
 
     public String toString() {
+        String coursesList = "";
+        for (String s : getCourses()){
+            coursesList = coursesList + " " + s;
+        }
         return "Id: " + getId() +
                 ", First Name: " + getFirstName() +
                 ", Last Name: " + getLastName() +
-                ", Courses: " + getCourses() +
+                ", Courses: " + coursesList +
                 ", Student Type: " + getStudentType();
     }
 

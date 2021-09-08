@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URI;
 import java.util.HashMap;
+import java.util.List;
 
 @RequestMapping("api/students")
 @RestController
@@ -37,7 +38,7 @@ public class StudentController {
     }
 
     @GetMapping
-    public HashMap<Integer, Student> getAllStudents() {
+    public List<Student> getAllStudents() {
         return studentRepository.listStudents();
     }
 

@@ -4,7 +4,9 @@ import com.example.student.management.system.main.Student;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Component
 @Profile("inMemoryStudentRepository")
@@ -19,9 +21,10 @@ public class InMemoryStudentRepository implements StudentRepository {
     }
 
     @Override
-    public HashMap<Integer, Student> listStudents() {
-        System.out.println(students);
-        return students;
+    public List<Student> listStudents() {
+        List<Student> listStudents = new ArrayList<>(students.values());
+        System.out.println(listStudents);
+        return listStudents;
     }
 
     @Override

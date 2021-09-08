@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 @Service
@@ -63,7 +64,7 @@ public class StudentManagementSystemService {
         return studentRepo.addStudent(part);
     }
 
-    public HashMap<Integer, Student> listStudents() {
+    public List<Student> listStudents() {
         return studentRepo.listStudents();
     }
 
