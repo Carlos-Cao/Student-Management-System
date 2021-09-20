@@ -25,6 +25,7 @@ public class StudentManagementSystemService {
 
         boolean exit = false;
         do {
+            cli.printMenu();
             try {
                 int option = scan.nextInt();
                 switch (option) {
